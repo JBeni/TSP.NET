@@ -4,11 +4,14 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using Library.Data.Entities;
 using Library.Data.Context;
+using System.Runtime.CompilerServices;
 
 
+[assembly: InternalsVisibleTo("Library.Services")]
+[assembly: InternalsVisibleTo("Library.WebMvc")]
 namespace Library.Data.Repository
 {
-    public class BookRepository
+    internal class BookRepository
     {
         private static ModelServicesContainer context = new ModelServicesContainer();
         

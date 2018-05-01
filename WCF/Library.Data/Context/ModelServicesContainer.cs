@@ -4,7 +4,7 @@ namespace Library.Data.Context
     using Library.Data.Mapping;
     using System.Data.Entity;
 
-    public partial class ModelServicesContainer : DbContext
+    internal partial class ModelServicesContainer : DbContext
     {
         public ModelServicesContainer() : base("ModelServicesContainer")
         {

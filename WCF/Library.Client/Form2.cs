@@ -26,7 +26,6 @@ namespace Library.Client
             if (ctx.LongCount() == 0)
             {
                 listAfiseazaRaspuns.Items.Add("Nu sunteti inregistrati in baza de date. \n Va rugam completati formularul \n de la 'Inregistrare Cititor'");
-//                MessageBox((IntPtr)0, "Nu sunteti inregistrati in baza de date. \n Va rugam completati formularul \n de la 'Inregistrare Cititor'", "Message Box", 0);
             }
             else if (ctx.LongCount() == 1)
             {
@@ -36,7 +35,6 @@ namespace Library.Client
                 content += "Id Cititor: " + ctx[0].CititorId + "\n";
 
                 listAfiseazaRaspuns.Items.Add(content);
-//                MessageBox((IntPtr)0, content, "Message Box", 0);
             }
 
             boxNumeCititorVerificareCititor.Text = "";
@@ -59,12 +57,10 @@ namespace Library.Client
                     }
 
                     listAfiseazaRaspuns.Items.Add(content);
-//                    MessageBox((IntPtr)0, content, "Message Box", 0);
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Nu avem carti de acest gen...");
-//                    MessageBox((IntPtr)0, "Nu avem carti de acest gen...", "Message Box", 0);
                 }
             }
             else if (boxNumeGenAfiseazaPreferinte.Text.Length == 0 && boxNumeAutorAfiseazaPreferinte.Text.Length > 0 && boxNumeCarteAfiseazaPreferinte.Text.Length == 0)
@@ -80,12 +76,10 @@ namespace Library.Client
                     }
 
                     listAfiseazaRaspuns.Items.Add(content);
-//                    MessageBox((IntPtr)0, content, "Message Box", 0);
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Nu avem carti cu acest autor...");
-//                    MessageBox((IntPtr)0, "Nu avem carti cu acest autor...", "Message Box", 0);
                 }
             }
             else if (boxNumeGenAfiseazaPreferinte.Text.Length == 0 && boxNumeAutorAfiseazaPreferinte.Text.Length == 0 && boxNumeCarteAfiseazaPreferinte.Text.Length > 0)
@@ -102,12 +96,10 @@ namespace Library.Client
                     }
 
                     listAfiseazaRaspuns.Items.Add(content);
-//                    MessageBox((IntPtr)0, content, "Message Box", 0);
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Nu avem carte cu acest nume...");
-//                    MessageBox((IntPtr)0, "Nu avem carte cu acest nume...", "Message Box", 0);
                 }
             }
             else if (boxNumeGenAfiseazaPreferinte.Text.Length == 0 && boxNumeAutorAfiseazaPreferinte.Text.Length > 0 && boxNumeCarteAfiseazaPreferinte.Text.Length > 0)
@@ -124,12 +116,10 @@ namespace Library.Client
                     }
 
                     listAfiseazaRaspuns.Items.Add(content);
-//                    MessageBox((IntPtr)0, content, "Message Box", 0);
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Nu avem carti cu acest autor si titlu...");
-//                    MessageBox((IntPtr)0, "Nu avem carti cu acest autor si titlu...", "Message Box", 0);
                 }
             }
             else if (boxNumeGenAfiseazaPreferinte.Text.Length > 0 && boxNumeAutorAfiseazaPreferinte.Text.Length > 0 && boxNumeCarteAfiseazaPreferinte.Text.Length > 0)
@@ -147,12 +137,10 @@ namespace Library.Client
                     }
 
                     listAfiseazaRaspuns.Items.Add(content);
-//                    MessageBox((IntPtr)0, content, "Message Box", 0);
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Nu avem carti cu acest gen, autor si titlu...");
-//                    MessageBox((IntPtr)0, "Nu avem carti cu acest gen, autor si titlu...", "Message Box", 0);
                 }
             }
 
@@ -190,12 +178,10 @@ namespace Library.Client
                         var queryDataToLoan = services.ShowDateToBorrowBook(titluCarteInsertImprumut.Text.Trim());
 
                         listAfiseazaRaspuns.Items.Add("Cartea nu este disponibila pentru a fi imprumutata!\n Data la care poate fi imprumutata este: " + queryDataToLoan);
-//                        MessageBox((IntPtr)0, "Cartea nu este disponibila pentru a fi imprumutata!\n Data la care poate fi imprumutata este: " + queryDataToLoan + "\n", "Message Box", 0);
                     }
                     else
                     {
                         listAfiseazaRaspuns.Items.Add("Cartea este disponibila pentru a fi imprumutata!");
-//                        MessageBox((IntPtr)0, "Cartea este disponibila pentru a fi imprumutata!", "Message Box", 0);
                         flag = 1;
                     }
 
@@ -216,19 +202,16 @@ namespace Library.Client
 
                         services.InsertLoan(imprumut);
                         listAfiseazaRaspuns.Items.Add("Insert Operation Completed");
-//                        MessageBox((IntPtr)0, "\nInsert Operation Completed", "Message Box", 0);
                     }
                 }
                 else
                 {
                     listAfiseazaRaspuns.Items.Add("Cititorul nu exista");
-//                    MessageBox((IntPtr)0, "\nCititorul nu exista", "Message Box", 0);
                 }
             }
             else
             {
                 listAfiseazaRaspuns.Items.Add("Cartea nu exista");
-//                MessageBox((IntPtr)0, "\nCartea nu exista", "Message Box", 0);
             }
 
             titluCarteInsertImprumut.Text = "";

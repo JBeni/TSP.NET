@@ -1,0 +1,38 @@
+
+1. ClassLibrary
+  -> acest proiect se ocupa de baza de date, folosind modelul Database First care presupune
+     ca baza de date este creata si apoi se genereaza modelul logic.
+  -> Folderul Entities contine schema pentru fiecare tabel generat din baza de date
+  -> Folderul Mapping contine maparea fiecarei entitati
+  -> Folderul Context contine contextul creat la generearea bazei de date prin care comunicam cu baza de date,
+     aici adaugam maparile entitatilor
+  -> Folderul Repository contine toate metodele necesare pentru a indeplini functionalitatile aplicatiei,
+     aici folosim un assembly care sa permita serviciilor sa apeleze metodele (declarat internal, ca si contextul
+     pentru a nu fi vizibil)
+
+2. Host
+  -> aici am realizat serverul, clasa care ofera posibilitatea clientilor de a consuma serviciile
+     cu ajutorului unui proxy. Aceasta clasa ofera un endpoint prin care se pot conecta alte aplicatiei, adica are o
+     adresa la care gasesti serviciul
+  -> fisierul de configurare pentru a putea expune servicii (a oferi adresa, binding, contract)
+
+3. Serviciul WCF
+  -> aceasta clasa creeaza servicii pe care clientul le poate apela prin intermediul acelui proxy
+     si expuse de clasa Server (Host)
+  -> Folderul Entities contine fiecare tabel din baza de date
+  -> serviciile create pentru a realiza functionalitate pentru clienti avand atasat contractul,
+     [DataContract] si [DataMember]
+  -> Folderul Models are o clasa folosita pentru a gestiona mai usor raspunsurile operatiilor de
+     insert, update si delete
+  -> Folderul Repository are o clasa care apeleaza acele metode din Api folosing AutoMapper
+  -> Interfata ILibraryServices contine toate serviciile disponibile, avand atasat contractul de servicii,
+     [ServiceContract] si [OperationContract]
+  -> Clasa LibraryServices implementeaza ILibraryServices, adica clasa care ofera servicii disponibile pentru a fi consumate
+
+4. Imprumut
+  -> clasa ofera posibilitatea de a imprumuta o carte (daca exista si daca este disponibila)
+  -> metoda AfiseazaPreferinte ofera posibilitatea de a cauta o carte sau mai multe dupa anumite criterii
+  -> metode insert imprumut verifica daca exista cartea si cititorul respectiv, apoi daca cartea este disponibila,
+     daca este o imprumutam, iar daca nu afisam data la care poate fi imprumutata; toate aceste mesaje
+     vor fi afisate intr-un ListBox
+

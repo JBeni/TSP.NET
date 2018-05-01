@@ -12,7 +12,7 @@ namespace Library.Services.Repository
     public class BookServices
     {
         private static BookRepository _bookRepository = new BookRepository(new ModelServicesContainer());
-
+        
         public BookServices()
         {
             Mapper.Initialize(config =>
