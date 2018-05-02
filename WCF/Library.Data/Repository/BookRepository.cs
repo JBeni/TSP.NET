@@ -8,7 +8,6 @@ using System.Runtime.CompilerServices;
 
 
 [assembly: InternalsVisibleTo("Library.Services")]
-[assembly: InternalsVisibleTo("Library.WebMvc")]
 namespace Library.Data.Repository
 {
     internal class BookRepository
