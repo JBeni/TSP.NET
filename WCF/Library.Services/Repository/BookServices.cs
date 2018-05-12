@@ -471,7 +471,9 @@ namespace Library.Services.Repository
 
         public List<CARTE> GetBookByTitle(string titluCarte)
         {
-            return _bookRepository.GetBookByTitle(titluCarte);
+            var unmapped = _bookRepository.GetBookByTitle(titluCarte);
+            var result = Mapper.Map<List<Data.Entities.CARTE>, List<CARTE>>(unmapped);
+            return result;
         }
 
         public List<CARTE> GetAllBooksByGen(string genCarte)
