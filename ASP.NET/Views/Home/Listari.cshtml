@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Afisare Informatii Baza de Date";
+}
+
+
+<h2>Afisare Informatii</h2>
+<hr />
+
+<html>
+<body>
+
+    <div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Genre" asp-action="AfisareGenuri">List Genres</a>
+        </div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Author" asp-action="AfisareAutori">List Authors</a>
+        </div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Book" asp-action="AfisareCarti">List Books</a>
+        </div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Loan" asp-action="AfisareImprumuturi">List Loans</a>
+        </div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Reader" asp-action="AfisareCititori">List Readers</a>
+        </div>
+        <div class="form-group">
+            <a asp-area="" asp-controller="Review" asp-action="AfisareReview">List Reviews</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

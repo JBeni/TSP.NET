@@ -1,0 +1,14 @@
+﻿@model Library.Web.Models.EntityModels.StatisticsViewModel
+@{
+    ViewData["Title"] = "Statistica3";
+}
+
+<h2>Statistica 3</h2>
+
+<ul>
+    @foreach (var item in Model.ArrayAuthor)
+    {
+        <li> @string.Format("Id = {0}", item) </li>
+    }
+</ul>
+

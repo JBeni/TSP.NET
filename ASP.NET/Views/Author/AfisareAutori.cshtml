@@ -1,0 +1,48 @@
+﻿@model Library.Web.Models.EntityModels.AuthorViewModel
+@{
+    ViewBag.Title = "Display Authors";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="titlu">
+        <h2>List of Authors</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    AutorId
+                </th>
+                <th>
+                    Nume Autor
+                </th>
+                <th>
+                    Prenume Autor
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model.AUTORs)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => author.AutorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => author.Nume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => author.Prenume)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+</body>
+</html>

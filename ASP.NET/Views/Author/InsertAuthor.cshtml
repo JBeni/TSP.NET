@@ -1,0 +1,38 @@
+﻿@model Library.Web.Models.EntityModels.AuthorViewModel
+@{
+    ViewBag.Title = "Add a new Author";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="titlu">
+        <p>Add a new Author</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="InsertAuthor">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="AUTOR.Nume" class="control-label"></label>
+                    <input asp-for="AUTOR.Nume" class="form-control" />
+                    <span asp-validation-for="AUTOR.Nume" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AUTOR.Prenume" class="control-label"></label>
+                    <input asp-for="AUTOR.Prenume" class="form-control" />
+                    <span asp-validation-for="AUTOR.Prenume" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Insert Author" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+
+</body>
+</html>

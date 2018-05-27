@@ -1,0 +1,49 @@
+﻿@model Library.Web.Models.EntityModels.StatisticsViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h2>Statistici</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Statistica1">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <p>Perioada de timp aleasa</p>
+                <div class="form-group">
+                    <label asp-for="StartDate" class="control-label"></label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StopDate" class="control-label"></label>
+                    <input asp-for="StopDate" class="form-control" />
+                    <span asp-validation-for="StopDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Afiseaza Statistica1" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <a asp-area="" asp-controller="Statistics" asp-action="Statistica1">Cititori dupa Perioada</a>
+    </div>
+    <div class="form-group">
+        <a asp-area="" asp-controller="Statistics" asp-action="Statistica2">Cartile Solicitate</a>
+    </div>
+    <div class="form-group">
+        <a asp-area="" asp-controller="Statistics" asp-action="Statistica3">Autorii Cautati</a>
+    </div>
+    <div class="form-group">
+        <a asp-area="" asp-controller="Statistics" asp-action="Statistica4">Genurile cele mai solicitate</a>
+    </div>
+    <div class="form-group">
+        <a asp-area="" asp-controller="Statistics" asp-action="Statistica5">Review-uri Carte</a>
+    </div>
+</div>
+

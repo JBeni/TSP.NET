@@ -1,0 +1,67 @@
+﻿@model Library.Web.Models.EntityModels.ReaderViewModel
+@{
+    ViewData["Title"] = "Afisare Cititori";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<html>
+<body>
+    <div class="modal-title">
+        <h2>List of Readers</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    CititorId
+                </th>
+                <th>
+                    Nume
+                </th>
+                <th>
+                    Prenume
+                </th>
+                <th>
+                    Adresa
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Stare
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CITITORs)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CititorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prenume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stare)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+</body>
+</html>

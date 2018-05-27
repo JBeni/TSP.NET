@@ -1,0 +1,43 @@
+﻿@model Library.Web.Models.EntityModels.GenreViewModel
+@{
+    ViewData["Title"] = "AfisareGenuri";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<html>
+<body>
+    <div class="title">
+        <h2>List of Genres</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    GenId
+                </th>
+                <th>
+                    Descriere
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GENs)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GenId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descriere)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back to Home</a>
+    </div>
+</body>
+</html>

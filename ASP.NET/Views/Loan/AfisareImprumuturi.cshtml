@@ -1,0 +1,67 @@
+﻿@model Library.Web.Models.EntityModels.LoanViewModel
+@{
+    ViewData["Title"] = "AfisareImprumuturi";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<html>
+<body>
+    <div class="titlu">
+        <h2>List of Loans</h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ImprumutId
+                </th>
+                <th>
+                    CarteId
+                </th>
+                <th>
+                    CititorId
+                </th>
+                <th>
+                    DataImprumut
+                </th>
+                <th>
+                    DataScadenta
+                </th>
+                <th>
+                    DataRestituire
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.IMPRUMUTs)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ImprumutId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarteId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CititorId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataImprumut)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataScadenta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataRestituire)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Back To Home</a>
+    </div>
+</body>
+</html>

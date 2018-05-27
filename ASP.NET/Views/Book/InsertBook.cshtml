@@ -1,0 +1,53 @@
+﻿@model Library.Web.Models.EntityModels.BookViewModel
+@{
+    ViewBag.Title = "Achizitie Carte";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<html>
+<body>
+    <div class="titlu">
+        <h2>Achizitie Carte</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="InsertBook">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <p>Date Carte</p>
+                <div class="form-group">
+                    <label asp-for="CARTE.Titlu" class="control-label"></label>
+                    <input asp-for="CARTE.Titlu" class="form-control" />
+                    <span asp-validation-for="CARTE.Titlu" class="text-danger"></span>
+                </div>
+                <p>Date Autor</p>
+                <div class="form-group">
+                    <label asp-for="AUTOR.Nume" class="control-label"></label>
+                    <input asp-for="AUTOR.Nume" class="form-control" />
+                    <span asp-validation-for="AUTOR.Nume" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AUTOR.Prenume" class="control-label"></label>
+                    <input asp-for="AUTOR.Prenume" class="form-control" />
+                    <span asp-validation-for="AUTOR.Prenume" class="text-danger"></span>
+                </div>
+                <p>Date Gen</p>
+                <div class="form-group">
+                    <label asp-for="GEN.Descriere" class="control-label"></label>
+                    <input asp-for="GEN.Descriere" class="form-control" />
+                    <span asp-validation-for="GEN.Descriere" class="text-danger"></span>
+                </div>
+                <p>Cate exemplare cumparam</p>
+                <div class="form-group">
+                    <label asp-for="numarCarti" class="control-label"></label>
+                    <input asp-for="numarCarti" class="form-control" />
+                    <span asp-validation-for="numarCarti" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Insert Book" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
