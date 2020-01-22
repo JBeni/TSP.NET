@@ -1,2 +1,2 @@
 # TSP.NET
-Tehnici speciale de programare .NET
+Special programming techniques .NET
