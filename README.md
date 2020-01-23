@@ -8,4 +8,4 @@ a web application for a library and the services needed for the actions of this 
 The project has 3 parts:
   * Building the database and the implementations of the repositories
   * Services - using WCF
-  * Created the client, using MVC and Razor for the web application
+  * Creating the client, using MVC and Razor for the web application
